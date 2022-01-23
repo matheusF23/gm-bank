@@ -1,0 +1,7 @@
+{
+  "name": "gm-bank",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Matheus Figueiredo <matheus_figueiredo18@hotmail.com>",
+  "license": "MIT"
+}
