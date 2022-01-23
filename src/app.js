@@ -3,8 +3,6 @@ import 'dotenv/config';
 import express from 'express';
 import routes from './routes';
 
-import './databases/mongodb';
-
 class App {
   constructor() {
     this.server = express();
