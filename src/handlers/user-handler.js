@@ -5,7 +5,7 @@ class UserHandler {
   /*
    * params: name, email, password
    */
-  static async createUser(req, res) {
+  static async create(req, res) {
     try {
       const { name, email, password } = req.body;
 
@@ -15,7 +15,7 @@ class UserHandler {
         return res.status(400).json({ error: 'Validation fails.' });
       }
 
-      const userData = await UserService.createUser(name, email, password);
+      const userData = await UserService.create(name, email, password);
 
       return res.json(userData);
     } catch (err) {

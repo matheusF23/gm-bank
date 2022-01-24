@@ -7,7 +7,7 @@ const User = require('../models/user-model');
 const UserService = require('./user-service');
 
 class SessionService {
-  static async createSession(email, password) {
+  static async create(email, password) {
     const user = await User.findByEmail(email);
 
     if (!user) {

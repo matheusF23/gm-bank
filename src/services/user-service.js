@@ -8,7 +8,7 @@ class UserService {
     return bcrypt.compare(password, user.password_hash);
   }
 
-  static async createUser(name, email, password) {
+  static async create(name, email, password) {
     const userExists = await User.findByEmail(email);
 
     if (userExists) {

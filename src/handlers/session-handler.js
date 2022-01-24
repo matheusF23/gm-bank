@@ -2,7 +2,7 @@ const SessionValidation = require('../validations/session-validation');
 const SessionService = require('../services/session-service');
 
 class SessionHandler {
-  static async createSession(req, res) {
+  static async create(req, res) {
     try {
       const { email, password } = req.body;
 
@@ -10,7 +10,7 @@ class SessionHandler {
         return res.status(400).json({ error: 'Validation fails.' });
       }
 
-      const sessionData = await SessionService.createSession(email, password);
+      const sessionData = await SessionService.create(email, password);
 
       return res.json(sessionData);
     } catch (err) {

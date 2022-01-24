@@ -7,8 +7,8 @@ const authMiddleware = require('./services/auth-service');
 
 const routes = new Router();
 
-routes.post('/users', UserHandler.createUser);
-routes.post('/sessions', SessionHandler.createSession);
+routes.post('/users', UserHandler.create);
+routes.post('/sessions', SessionHandler.create);
 
 routes.use(authMiddleware);
 
