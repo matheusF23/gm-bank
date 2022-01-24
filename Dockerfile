@@ -17,4 +17,7 @@ RUN npm i
 
 COPY ./src/ ./src/
 
-CMD ["npm", "run", "dev"]
+CMD if [ "$NODE_ENV" = "dev" ]; \
+  then npm run dev;  \
+  else npm start; \
+  fi
