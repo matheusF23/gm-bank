@@ -4,8 +4,8 @@ const Exception = require('../helpers/exception');
 const User = require('../models/user-model');
 
 class UserService {
-  static checkPassword(password) {
-    return bcrypt.compare(password, this.password_hash);
+  static async checkPassword(password, user) {
+    return bcrypt.compare(password, user.password_hash);
   }
 
   static async createUser(name, email, password) {

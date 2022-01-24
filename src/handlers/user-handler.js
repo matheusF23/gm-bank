@@ -5,11 +5,13 @@ class UserHandler {
   /*
    * params: name, email, password
    */
-  static async store(req, res) {
+  static async createUser(req, res) {
     try {
       const { name, email, password } = req.body;
 
-      if (!UserValidation.validateInputData({ name, email, password })) {
+      if (
+        !(await UserValidation.validateInputData({ name, email, password }))
+      ) {
         return res.status(400).json({ error: 'Validation fails.' });
       }
 
