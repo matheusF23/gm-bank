@@ -1,11 +1,12 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
-export default new mongoose.Schema(
+module.exports = new mongoose.Schema(
   {
-    _id: {
-      type: mongoose.SchemaTypes.ObjectId,
+    userId: {
+      type: String,
       default: null,
     },
+
     name: {
       type: String,
       default: null,
