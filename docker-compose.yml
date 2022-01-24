@@ -6,7 +6,7 @@ services:
     env_file:
       - .env
     ports:
-      - "3335:3333"
+      - "3333:3333"
     volumes:
       - "./src/:/usr/src/app/src/"
     depends_on:
