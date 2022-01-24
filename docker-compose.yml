@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    env_file:
+      - .env
+    ports:
+      - "3335:3333"
+    volumes:
+      - "./src/:/usr/src/app/src/"
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - ./mongodb/database:/data/db
+    ports:
+      - 27017:27017
+    restart: unless-stopped
