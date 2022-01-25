@@ -17,18 +17,6 @@ class SessionHandler {
       return res.status(err.status || 500).json({ error: err.message });
     }
   }
-
-  static async getBalance(req, res) {
-    const { userId } = req.params;
-
-    if (!(await SessionValidation.validateGetBalanceData(userId))) {
-      return res.status(400).json({ error: 'Validation fails.' });
-    }
-
-    const balance = await SessionService.getBalance(userId);
-
-    return res.json(balance);
-  }
 }
 
 module.exports = SessionHandler;

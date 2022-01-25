@@ -1,7 +1,7 @@
 const Yup = require('yup');
 
-class UserValidaton {
-  static async validateCreateData(data) {
+class SessionValidaton {
+  static async validateInputData(data) {
     const schema = Yup.object().shape({
       email: Yup.string().email().required(),
       password: Yup.string().required(),
@@ -9,14 +9,6 @@ class UserValidaton {
 
     return schema.isValid(data);
   }
-
-  static async validateGetBalanceData(userId) {
-    const schema = Yup.object().shape({
-      userId: Yup.string().required(),
-    });
-
-    return schema.isValid({ userId });
-  }
 }
 
-module.exports = UserValidaton;
+module.exports = SessionValidaton;
