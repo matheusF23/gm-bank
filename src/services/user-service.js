@@ -2,6 +2,7 @@ const bcrypt = require('bcryptjs');
 const Exception = require('../helpers/exception');
 
 const User = require('../models/user-model');
+const BankAccount = require('../models/bank-account-model');
 
 class UserService {
   static async checkPassword(password, user) {
@@ -16,6 +17,7 @@ class UserService {
     }
 
     const user = await User.register(name, email, password);
+    await BankAccount.create({ userId: user.userId });
 
     return { userId: user.userId, name: user.name, email: user.email };
   }
