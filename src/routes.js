@@ -2,6 +2,7 @@ const { Router } = require('express');
 
 const UserHandler = require('./handlers/user-handler');
 const SessionHandler = require('./handlers/session-handler');
+const BankAccountHandler = require('./handlers/bank-account-handler');
 
 const authMiddleware = require('./services/auth-service');
 
@@ -12,6 +13,6 @@ routes.post('/sessions', SessionHandler.create);
 
 routes.use(authMiddleware);
 
-routes.get('/balance/:userId', SessionHandler.getBalance);
+routes.get('/balance/:userId', BankAccountHandler.getBalance);
 
 module.exports = routes;
