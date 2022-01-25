@@ -10,4 +10,6 @@ const BankAccount = connection.model(
   'bank_accounts'
 );
 
+BankAccount.getBalance = (userId) => BankAccount.findOne({ userId });
+
 module.exports = BankAccount;

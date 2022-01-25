@@ -12,4 +12,6 @@ routes.post('/sessions', SessionHandler.create);
 
 routes.use(authMiddleware);
 
+routes.get('/balance/:userId', SessionHandler.getBalance);
+
 module.exports = routes;

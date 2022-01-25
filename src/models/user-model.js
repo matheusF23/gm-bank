@@ -10,6 +10,7 @@ const connection = MongoDB.getOrCreateConnection();
 const User = connection.model('users', UserSchema, 'users');
 
 User.findByEmail = (email) => User.findOne({ email }).lean();
+User.findByUserId = (userId) => User.findOne({ userId }).lean();
 
 User.register = async (name, email, password) => {
   const userId = uuidv4();

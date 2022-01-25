@@ -6,7 +6,7 @@ class SessionHandler {
     try {
       const { email, password } = req.body;
 
-      if (!(await SessionValidation.validateInputData({ email, password }))) {
+      if (!(await SessionValidation.validateCreateData({ email, password }))) {
         return res.status(400).json({ error: 'Validation fails.' });
       }
 
@@ -16,6 +16,18 @@ class SessionHandler {
     } catch (err) {
       return res.status(err.status || 500).json({ error: err.message });
     }
+  }
+
+  static async getBalance(req, res) {
+    const { userId } = req.params;
+
+    if (!(await SessionValidation.validateGetBalanceData(userId))) {
+      return res.status(400).json({ error: 'Validation fails.' });
+    }
+
+    const balance = await SessionService.getBalance(userId);
+
+    return res.json(balance);
   }
 }
 
