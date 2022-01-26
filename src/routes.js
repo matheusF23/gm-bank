@@ -14,5 +14,6 @@ routes.post('/sessions', SessionHandler.create);
 routes.use(authMiddleware);
 
 routes.get('/balance/:userId', BankAccountHandler.getBalance);
+routes.post('/deposit', BankAccountHandler.deposit);
 
 module.exports = routes;
