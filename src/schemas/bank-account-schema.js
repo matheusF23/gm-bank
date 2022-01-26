@@ -18,8 +18,8 @@ module.exports = new mongoose.Schema(
             default: null,
           },
           amount: {
-            type: String,
-            default: null,
+            type: Number,
+            default: 0,
           },
           date: {
             type: String,
