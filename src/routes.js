@@ -14,6 +14,7 @@ routes.post('/sessions', SessionHandler.create);
 routes.use(authMiddleware);
 
 routes.get('/balance/:userId', BankAccountHandler.getBalance);
+routes.get('/extract/:userId', BankAccountHandler.getExtract);
 routes.post('/deposit', BankAccountHandler.deposit);
 routes.post('/withdraw', BankAccountHandler.withdraw);
 

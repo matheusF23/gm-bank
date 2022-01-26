@@ -1,7 +1,7 @@
 const Yup = require('yup');
 
 class BankAccountValidaton {
-  static async validateGetBalanceData(userId) {
+  static async validateInputData(userId) {
     const schema = Yup.object().shape({
       userId: Yup.string().required(),
     });

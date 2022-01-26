@@ -21,6 +21,10 @@ module.exports = new mongoose.Schema(
             type: String,
             default: null,
           },
+          date: {
+            type: String,
+            default: null,
+          },
         },
       ],
       default: [],
