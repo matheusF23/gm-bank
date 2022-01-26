@@ -13,6 +13,20 @@ class BankAccountHandler {
 
     return res.json(balance);
   }
+
+  static async deposit(req, res) {
+    const { userId, amount } = req.body;
+
+    if (
+      !(await BankAccountValidation.validateDepositData({ userId, amount }))
+    ) {
+      return res.status(400).json({ error: 'Validation fails.' });
+    }
+
+    await BankAccountService.addMoney(userId, amount);
+
+    return res.json({ message: 'Added money' });
+  }
 }
 
 module.exports = BankAccountHandler;
