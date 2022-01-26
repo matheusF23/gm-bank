@@ -6,7 +6,7 @@ class SessionHandler {
     try {
       const { email, password } = req.body;
 
-      if (!(await SessionValidation.validateCreateData({ email, password }))) {
+      if (!(await SessionValidation.validateInputData({ email, password }))) {
         return res.status(400).json({ error: 'Validation fails.' });
       }
 
