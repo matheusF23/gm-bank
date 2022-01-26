@@ -15,5 +15,6 @@ routes.use(authMiddleware);
 
 routes.get('/balance/:userId', BankAccountHandler.getBalance);
 routes.post('/deposit', BankAccountHandler.deposit);
+routes.post('/withdraw', BankAccountHandler.withdraw);
 
 module.exports = routes;

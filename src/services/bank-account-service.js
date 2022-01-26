@@ -27,6 +27,24 @@ class BankAccountService {
 
     account.save();
   }
+
+  static async withdraw(userId, amount) {
+    const user = await User.findByUserId(userId);
+
+    if (!user) throw new Exception({ status: 400, message: 'User not found.' });
+
+    const account = await BankAccount.getAccount(userId);
+    const extract = { action: 'WITHDRAWN', amount };
+
+    account.balance -= amount;
+
+    if (account.balance < 0)
+      throw new Exception({ status: 400, message: 'Insufficient balance.' });
+
+    account.extract.push(extract);
+
+    account.save();
+  }
 }
 
 module.exports = BankAccountService;

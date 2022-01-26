@@ -9,7 +9,7 @@ class BankAccountValidaton {
     return schema.isValid({ userId });
   }
 
-  static async validateDepositData(data) {
+  static async validateTransectionData(data) {
     const schema = Yup.object().shape({
       userId: Yup.string().required(),
       amount: Yup.number().required(),

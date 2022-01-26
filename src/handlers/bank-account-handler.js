@@ -18,7 +18,7 @@ class BankAccountHandler {
     const { userId, amount } = req.body;
 
     if (
-      !(await BankAccountValidation.validateDepositData({ userId, amount }))
+      !(await BankAccountValidation.validateTransectionData({ userId, amount }))
     ) {
       return res.status(400).json({ error: 'Validation fails.' });
     }
@@ -26,6 +26,20 @@ class BankAccountHandler {
     await BankAccountService.addMoney(userId, amount);
 
     return res.json({ message: 'Added money' });
+  }
+
+  static async withdraw(req, res) {
+    const { userId, amount } = req.body;
+
+    if (
+      !(await BankAccountValidation.validateTransectionData({ userId, amount }))
+    ) {
+      return res.status(400).json({ error: 'Validation fails.' });
+    }
+
+    await BankAccountService.withdraw(userId, amount);
+
+    return res.json({ message: 'Successful withdrawal' });
   }
 }
 
