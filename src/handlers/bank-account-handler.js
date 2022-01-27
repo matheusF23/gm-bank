@@ -7,7 +7,7 @@ class BankAccountHandler {
       const { userId } = req.params;
 
       if (!(await BankAccountValidation.validateInputData(userId))) {
-        return res.status(400).json({ error: 'Validation fails.' });
+        return res.status(400).json({ error: 'Dados inválido!' });
       }
 
       const balance = await BankAccountService.getBalance(userId);
@@ -23,7 +23,7 @@ class BankAccountHandler {
       const { userId } = req.params;
 
       if (!(await BankAccountValidation.validateInputData(userId))) {
-        return res.status(400).json({ error: 'Validation fails.' });
+        return res.status(400).json({ error: 'Dados inválidos!' });
       }
 
       const extract = await BankAccountService.getExtract(userId);
@@ -44,7 +44,7 @@ class BankAccountHandler {
           amount,
         }))
       ) {
-        return res.status(400).json({ error: 'Validation fails.' });
+        return res.status(400).json({ error: 'Valor inválido!' });
       }
 
       const extract = await BankAccountService.addMoney(userId, amount);
@@ -65,7 +65,7 @@ class BankAccountHandler {
           amount,
         }))
       ) {
-        return res.status(400).json({ error: 'Validation fails.' });
+        return res.status(400).json({ error: 'Valor inválido!' });
       }
 
       const extract = await BankAccountService.withdraw(userId, amount);
