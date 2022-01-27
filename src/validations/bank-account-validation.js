@@ -12,7 +12,7 @@ class BankAccountValidaton {
   static async validateTransectionData(data) {
     const schema = Yup.object().shape({
       userId: Yup.string().required(),
-      amount: Yup.number().required(),
+      amount: Yup.number().required().min(0),
     });
 
     return schema.isValid(data);
