@@ -14,10 +14,11 @@ class SessionService {
   static async create(email, password) {
     const user = await User.findByEmail(email);
 
-    if (!user) throw new Exception({ status: 401, message: 'User not found.' });
+    if (!user)
+      throw new Exception({ status: 401, message: 'Usuário não encontrado!' });
 
     if (!(await SessionService.checkPassword(password, user))) {
-      throw new Exception({ status: 401, message: 'Password does not match' });
+      throw new Exception({ status: 401, message: 'Senha incorreta!' });
     }
 
     return {

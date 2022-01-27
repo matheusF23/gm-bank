@@ -10,7 +10,7 @@ class UserService {
     const userExists = await User.findByEmail(email);
 
     if (userExists) {
-      throw new Exception({ status: 400, message: 'User already exists.' });
+      throw new Exception({ status: 400, message: 'Usuário ja existe!' });
     }
 
     const user = await User.register(name, email, password);
