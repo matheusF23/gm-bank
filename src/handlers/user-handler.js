@@ -12,7 +12,7 @@ class UserHandler {
       if (
         !(await UserValidation.validateInputData({ name, email, password }))
       ) {
-        return res.status(400).json({ error: 'Validation fails.' });
+        return res.status(400).json({ error: 'Dados incorretos!' });
       }
 
       const userData = await UserService.create(name, email, password);
