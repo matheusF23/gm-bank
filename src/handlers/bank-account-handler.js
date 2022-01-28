@@ -7,7 +7,7 @@ class BankAccountHandler {
       const { userId } = req.params;
 
       if (!(await BankAccountValidation.validateInputData(userId))) {
-        return res.status(400).json({ error: 'Dados inválido!' });
+        return res.status(400).json({ error: 'Dados inválidos!' });
       }
 
       const balance = await BankAccountService.getBalance(userId);
