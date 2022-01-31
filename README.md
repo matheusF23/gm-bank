@@ -4,7 +4,7 @@
 
 Este é o backend de um projeto que exemplifica um aplicativo de um banco, utilizando o REST.
 
-O frontend (que é uma aplicação para ios) pode ser encontrado [aqui](git@github.com:gilsonsantos03/gm-bank-ios.git).
+O frontend (que é uma aplicação para ios) pode ser encontrado [aqui](https://github.com/gilsonsantos03/gm-bank-ios).
 
 ## Clonar o projeto
 
