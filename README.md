@@ -1,4 +1,4 @@
-**Participantes**: [Gilson Santos](https://github.com/gilsonsantos03) e [Matheus Figueiredo](https://github.com/matheusF23)
+**Participantes**: Frontend: [Gilson Santos](https://github.com/gilsonsantos03). Backend: [Matheus Figueiredo](https://github.com/matheusF23)
 
 # gm-bank
 
@@ -26,3 +26,5 @@ Feito isso, basta abrir o terminal na pasta do projeto e executar:
 ```
 $ docker-compose up
 ```
+
+Pronto, agora é só executar o aplicativo no emulador de ios.
