@@ -28,3 +28,8 @@ $ docker-compose up
 ```
 
 Pronto, agora é só executar o aplicativo no emulador de ios.
+
+
+
+https://user-images.githubusercontent.com/54044801/151874596-edd664b7-61b0-46b4-921d-e09970799499.mp4
+
