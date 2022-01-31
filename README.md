@@ -1,6 +1,6 @@
 **Participantes**: Frontend: [Gilson Santos](https://github.com/gilsonsantos03). Backend: [Matheus Figueiredo](https://github.com/matheusF23)
 
-# gm-bank
+# GM-Bank
 
 Este é o backend de um projeto que exemplifica um aplicativo de um banco, utilizando o REST.
 
